@@ -1,0 +1,34 @@
+@font-face {
+  font-family: "SUIT Variable";
+  font-weight: 100 900;
+  src: url("../fonts/SUIT-Variable.woff2") format("woff2-variations");
+}
+
+body {
+  font-family: "SUIT Variable", sans-serif;
+}
+
+/* 헤더 */
+.header {
+  background-color: yellow;
+}
+
+/* 비주얼 */
+.visual {
+  background-color: pink;
+}
+
+/* 메인 콘텐츠 */
+.main {
+  background-color: skyblue;
+}
+
+/* 슬로건 */
+.slogan {
+  background-color: lime;
+}
+
+/* 푸터 */
+.footer {
+  background-color: orange;
+}
