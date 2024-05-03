@@ -23,8 +23,20 @@ body {
 
 /* 헤더 */
 .header {
-  background-color: yellow;
-  height: 10vh;
+  background-color: darkblue;
+  height: 120px;
+  padding: 0 50px;
+  border-radius: 0 0 15px 15px;
+  position: relative;
+}
+
+/* 로고 */
+/* 마진은 border가 없으면 바깥 여백이 있어야함 아니면 뚫고 나감 */
+.logo {
+  position: absolute;
+  top: 45px;
+  left: 60px;
+  background-color: orange;
 }
 
 /* 비주얼 */
@@ -38,20 +50,45 @@ body {
 */
 .main {
   background-color: skyblue;
-  height: 60vh;
-  display: flex;
+  display: flow-root;
+  min-height: 60vh;
+  padding: 28px 16px 36px;
+  /* display: flex;
   flex-flow: row nowrap;
-  justify-content: flex-start; /* *메인 축 */
-  align-items: stretch; /* *교차 축 */
+  justify-content: space-between;
+  align-items: stretch; */
 }
+
 .group {
   border: 1px solid red;
+  float: left;
+}
+
+/* ? order를 지정하지 않으면 전부다 0으로 되어있다. 그리고 모두다 0일때는 마크업 순서대로 렌더링이 된다. */
+.group:nth-child(n + 2) {
+  margin-left: 44px;
+}
+
+.group1 {
+  width: 250px;
+  background-color: orange;
+}
+
+.group2 {
+  width: 380px;
+  background-color: lightgray;
+}
+
+.group3 {
+  width: 190px;
+  background-color: aquamarine;
 }
 
 /* 슬로건 */
 .slogan {
   background-color: lime;
   height: 10vh;
+  clear: both;
 }
 
 /* 푸터 */
@@ -61,4 +98,14 @@ body {
 .footer-inner {
   background-color: yellow;
   height: 10vh;
+}
+
+/* ? flex를 지원하는 웹브라우저를 위한 스타일 */
+
+@supports (display: flex) {
+  .main {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+  }
 }
