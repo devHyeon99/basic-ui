@@ -1,0 +1,34 @@
+/* 텍스트 링크 모음 */
+/* flex / float / position / inline-block / grid 를 사용해서 한 라인으로 레이아웃 정렬 가능 */
+/* 변수 : custom property => scope (범위)를 가짐 */
+/* 중첩 패턴 */
+
+:root {
+  --base-font-famaily: "SUIT Variable", sans-serif;
+}
+
+/* 컴포넌트 */
+.member-service {
+  --font-size: 0.875rem;
+
+  font-family: var(--base-font-famaily);
+  font-size: 0;
+  list-style-type: none;
+  padding-inline-start: 0;
+  margin: 0;
+  text-align: right;
+
+  li {
+    display: inline-block;
+    margin: 0;
+    font-size: var(--font-size);
+
+    a {
+      padding: 8px 8px 8px 4px;
+      text-transform: uppercase;
+      text-decoration: none;
+      color: inherit;
+      display: inherit;
+    }
+  }
+}
