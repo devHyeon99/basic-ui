@@ -8,8 +8,22 @@
   --container-size: 940px;
 }
 
+/* 기본 박스 사이징 설정 */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* 그라디언트 배경, 배경 이미지 linear-gradient(다양한 방향, 각도로 설정이 가능함)*/
 body {
-  font-family: "SUIT Variable", sans-serif;
+  font-family: "SUTI Variable", sans-serif;
+  margin: 0;
+  background-color: #ccc;
+  background-image: url(../images/bg_flower.png),
+    linear-gradient(180deg, #aaa 0%, #ccc 30%, #eee 50%, #fff 100%);
+  background-repeat: no-repeat;
+  background-position: 50% 0, 0, 0;
 }
 
 .header,
@@ -23,7 +37,7 @@ body {
 
 /* 헤더 */
 .header {
-  background-color: darkblue;
+  background-color: #fff;
   height: 120px;
   padding: 0 50px;
   border-radius: 0 0 15px 15px;
@@ -36,20 +50,43 @@ body {
   position: absolute;
   top: 45px;
   left: 60px;
-  background-color: orange;
+  /* background-color: orange; */
 }
 
 /* 비주얼 */
+/* 배경 이미지를 안주면 투명으로 적용 되어 있음 */
 .visual {
-  background-color: pink;
-  height: 10vh;
+  position: relative;
+  height: 120px;
 }
 
-/* 메인 콘텐츠 
- ! flex container !
-*/
+/* pos, float 특정 속성 사용시 블록 포멧팅으로 자동으로 바뀜. */
+.visual::before,
+.visual::after {
+  content: "";
+  position: absolute;
+  width: inherit;
+  height: inherit;
+  top: 0;
+  left: 0;
+  background-repeat: no-repeat;
+}
+
+.visual::before {
+  background-image: url(../images/ani_flower_01.png),
+    url(../images/ani_flower_02.png);
+  background-position: 0 -10px, 600px 10px;
+}
+
+.visual::after {
+  background-image: url(../images/ani_flower_03.png),
+    url(../images/ani_flower_04.png);
+  background-position: 300px 0, 800px 30px;
+}
+
+/* 메인 콘텐츠 flex container */
 .main {
-  background-color: skyblue;
+  background-color: #fff;
   display: flow-root;
   min-height: 60vh;
   padding: 28px 16px 36px;
@@ -71,32 +108,32 @@ body {
 
 .group1 {
   width: 250px;
-  background-color: orange;
+  /* background-color: orange; */
 }
 
 .group2 {
   width: 380px;
-  background-color: lightgray;
+  /* background-color: lightgray; */
 }
 
 .group3 {
   width: 190px;
-  background-color: aquamarine;
+  /* background-color: aquamarine; */
 }
 
 /* 슬로건 */
 .slogan {
-  background-color: lime;
+  /* background-color: lime; */
   height: 10vh;
   clear: both;
 }
 
 /* 푸터 */
 .footer {
-  background-color: orange;
+  /* background-color: orange; */
 }
 .footer-inner {
-  background-color: yellow;
+  /* background-color: yellow; */
   height: 10vh;
 }
 
