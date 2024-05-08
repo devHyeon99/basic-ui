@@ -1,0 +1,34 @@
+.box {
+  /* width: 500px;
+  height: 300px; */
+  inline-size: 500px;
+  block-size: 100px;
+  border: 20px dashed blue;
+  padding: 20px;
+  margin: 50px;
+  /* background-color: pink; */
+  /* background-image: url(../../images/coffee.png);
+  background-repeat: no-repeat;
+  background-position: 20% 30%;
+  background-size: 110px 83px; /* cover, contain 근데 원본 이미지 생각하고 늘려야함 아니면 이미지 깨짐 */
+  /* background-attachment: scroll; */
+  background: pink url(../../images/coffee.png) no-repeat 20% 30% /110px 83px scroll; /* 6개의 값을 한번에 저장 가능*/
+  overflow: auto;
+}
+
+/* 상대경로, 절대 경로 검색해보기 */
+
+.container {
+  inline-size: 600px;
+  block-size: 300px;
+  border: 1px solid red;
+  /* background-color: yellow;
+  background-image: url(../../images/ani_flower_01.png),
+    url(../../images/ani_flower_02.png);
+  background-repeat: no-repeat;
+  background-position: 0 0, 200px 150px; */
+  background: url(../../images/ani_flower_01.png) no-repeat 0 0,
+    url(../../images/ani_flower_02.png) no-repeat 200px 100px, lightblue;
+}
+
+/* 멀티 백그라운드 이미지 규칙은 먼저 선언 한 이미지가 위로 올라갑니다. */
