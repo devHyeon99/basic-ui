@@ -1,0 +1,15 @@
+.sr-only {
+  background-color: yellow;
+  position: absolute;
+  inline-size: 1px;
+  block-size: 1px;
+  overflow: hidden;
+  margin: -1px;
+  clip: rect(0, 0, 0, 0);
+  clip-path: polygon(0 0, 0 0, 00);
+  padding: 0;
+  white-space: nowrap;
+  border-width: 0;
+}
+/* 스크린 리더는 가상 커서를 인식한다. 그때 크기가 0이면 객체를 인식을 못함. 최소한의 크기를 가지고 있어야 함. font-size: 0 이것도 객체로 못읽음 opacity도 못 읽어냄*/
+/* clip 속성을 사용 하려면 포지션이 absolute여야 한다. 근데 요즘 많이 안 씀 이유는 지원 중단인듯? 대신 clip-path: polygon(); 사용 함 */
