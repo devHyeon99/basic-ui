@@ -1,0 +1,21 @@
+@keyframes size {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 500px;
+  }
+}
+
+.box {
+  background: yellow;
+  width: 0;
+  overflow: hidden;
+  animation: size 10s 2s forwards ease-in-out alternate 2;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .box {
+    animation: none;
+  }
+}

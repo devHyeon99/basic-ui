@@ -1,3 +1,5 @@
+@import url(theme.css);
+
 @font-face {
   font-family: "SUIT Variable";
   font-weight: 100 900;
@@ -6,6 +8,10 @@
 
 :root {
   --container-size: 940px;
+  --base-font: "SUIT Variable", sans-serif;
+  --primary: var(--orange-200);
+  --scendary: var(--orange-100);
+  --border-primary: var(--gray-900);
 }
 
 /* 기본 박스 사이징 설정 */
@@ -17,8 +23,9 @@
 
 /* 그라디언트 배경, 배경 이미지 linear-gradient(다양한 방향, 각도로 설정이 가능함)*/
 body {
-  font-family: "SUTI Variable", sans-serif;
+  font-family: var(--base-font);
   margin: 0;
+  line-height: 1.15;
   background-color: #ccc;
   background-image: url(../images/bg_flower.png),
     linear-gradient(180deg, #aaa 0%, #ccc 30%, #eee 50%, #fff 100%);
@@ -39,7 +46,7 @@ body {
 .header {
   background-color: #fff;
   height: 120px;
-  padding: 0 50px;
+  padding: 0 28px;
   border-radius: 0 0 15px 15px;
   position: relative;
 }
@@ -50,14 +57,71 @@ body {
   position: absolute;
   top: 45px;
   left: 60px;
+  margin: 0;
+  font-size: 1em;
+  a,
+  img {
+    display: block;
+    /* 인라인 상자 정렬 */
+    /* vertical-align: top 또는 middle */
+  }
   /* background-color: orange; */
 }
 
+/* 텍스트 링크 모음 */
+/* 컴포넌트 */
+.member-service {
+  --spacing: 8px;
+
+  font-size: 0;
+  list-style-type: none;
+  padding-inline-start: 0;
+  margin: 0;
+  text-align: right;
+  translate: var(--spacing, 8px) 0;
+
+  li {
+    display: inline-block;
+    margin: 0;
+    font-size: 0.874rem;
+
+    a {
+      padding: var(--spacing, 8px) var(--spacing, 8px) var(--spacing, 8px) 4px;
+      text-transform: uppercase;
+      text-decoration: none;
+      color: inherit;
+      display: inherit;
+    }
+  }
+}
+
 /* 비주얼 */
+/* 애니메이션을 위한 키프레임 정의 , 문법 규칙은 From으로 시작해서 to로 끝남. 애니메이션 작업 -> 시나리오 작업이라고 생각을 함.*/
+@keyframes moveEffect {
+  0% {
+    font-size: 12px;
+    translate: 0 0;
+  }
+  100% {
+    font-size: 24px;
+    translate: 320px 75px;
+  }
+}
+
+@keyframes fadeEffect {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
 /* 배경 이미지를 안주면 투명으로 적용 되어 있음 */
 .visual {
   position: relative;
   height: 120px;
+  border: 1px solid transparent;
 }
 
 /* pos, float 특정 속성 사용시 블록 포멧팅으로 자동으로 바뀜. */
@@ -70,6 +134,7 @@ body {
   top: 0;
   left: 0;
   background-repeat: no-repeat;
+  animation: fadeEffect 4s infinite alternate;
 }
 
 .visual::before {
@@ -82,6 +147,17 @@ body {
   background-image: url(../images/ani_flower_03.png),
     url(../images/ani_flower_04.png);
   background-position: 300px 0, 800px 30px;
+  animation-delay: 2000ms;
+}
+
+.visual-text {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  animation-name: moveEffect;
+  animation-duration: 5s;
+  animation-fill-mode: forwards;
+  display: inline-block;
+  position: relative;
+  z-index: 1;
 }
 
 /* 메인 콘텐츠 flex container */
