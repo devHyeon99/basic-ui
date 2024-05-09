@@ -9,6 +9,7 @@
   display: flex;
   flex-flow: row nowrap;
   gap: var(--spacing);
+  align-items: center;
 
   label {
     white-space: nowrap;
