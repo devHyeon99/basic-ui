@@ -1,0 +1,73 @@
+@import url(/style/reset.css);
+@import url(/style/base.css);
+@import url(/style/theme.css);
+
+body,
+h1 {
+  margin: 50px;
+}
+
+.form-checkbox {
+  position: relative;
+  display: inline-block;
+  padding: 5px;
+
+  &:focus-visible {
+    outline: 1px solid black;
+    border-radius: 5px;
+  }
+
+  input {
+    position: absolute;
+    appearance: none;
+    width: 12px;
+    height: 12px;
+  }
+
+  label {
+    background: url(../images/un-check.svg) no-repeat 0 0 / contain;
+    padding-left: 25px;
+    cursor: pointer;
+  }
+
+  input:checked + label {
+    background-image: url(../images/checked.svg);
+  }
+
+  input:focus {
+    outline: none;
+  }
+}
+
+.tooltip {
+  margin-top: 50px;
+
+  .tooltip-icon {
+    width: 20px;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: cetner;
+    border: 2px solid currentColor;
+    border-radius: 50%;
+    padding: 0.25em;
+    font-size: 10px;
+    color: #ccc;
+
+    &:hover + .tooltip-content,
+    &:focus + .tooltip-content {
+      display: block;
+    }
+  }
+
+  .tooltip-content {
+    display: none;
+    margin: 10px;
+    background: rgba(0, 0, 0, 0.4);
+    padding: 15px;
+    color: #fff;
+    width: 15em;
+    font-size: 14px;
+    font-weight: 300;
+  }
+}
