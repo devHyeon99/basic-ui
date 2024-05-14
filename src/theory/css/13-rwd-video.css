@@ -1,0 +1,15 @@
+@import url(default.css);
+
+.video-container {
+  padding: 20px;
+  border: 1px solid #000;
+  box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.5);
+  .video {
+    width: 100%;
+  }
+}
+
+.box {
+  width: 50%;
+  margin: 0 auto;
+}
