@@ -1,4 +1,3 @@
-/* 스타일 초기화 */
 h1,
 h2,
 h3,
@@ -20,6 +19,11 @@ ol {
   list-style: none;
   padding-left: 0;
   padding-inline-start: 0;
+  margin: 0;
+}
+
+p,
+figure {
   margin: 0;
 }
 

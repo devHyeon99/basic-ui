@@ -1,7 +1,9 @@
 :root {
   --min-container-size: 320px;
-  --max-container-size: 1200px;
-  --spacing: 24px;
+  --max-container-size: 1280px;
+  /* --spacing: 24px; */
+  --gap: 24px;
+  --column-count: 12;
 }
 
 body {
@@ -19,7 +21,7 @@ body {
   height: 100%;
   padding: 0 var(--spacing);
   display: grid;
-  column-gap: var(--spacing);
+  column-gap: var(--gap);
 
   .grid-column {
     background-color: var(--column-bg);
@@ -28,7 +30,6 @@ body {
 
 @media (max-width: 768px) {
   .grid-show {
-    --column-count: 4;
     --column-bg: rgba(255, 255, 0, 0.15);
 
     min-width: var(--min-container-size);
@@ -39,7 +40,6 @@ body {
 
 @media (min-width: 1200px) {
   .grid-show {
-    --column-count: 12;
     --column-bg: rgba(255, 0, 0, 0.15);
 
     min-width: var(--breakpoint);
