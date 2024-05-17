@@ -72,9 +72,15 @@ h1 {
   box-shadow: 0 0 0.25rem 1px #aaa;
   border-radius: 0.25rem;
   /* width: 300px; */
-  display: flex;
-  flex-flow: column nowrap;
-  row-gap: 1rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-areas:
+    "image"
+    "title"
+    "content"
+    "tags";
+  gap: 20px;
+  align-items: start;
   color: #4a5569;
 
   h2,
@@ -84,30 +90,34 @@ h1 {
   }
 
   h2 {
+    grid-area: title;
     font-size: 1.25rem;
     font-weight: 700;
+    margin-top: 1rem;
   }
 
   figure {
+    grid-area: image;
     order: -1;
-    margin: 0;
+    margin: 1rem 1rem 1rem 1rem;
 
     img {
       border-radius: 0.25rem 0.25rem 0 0;
-      max-width: 100%;
-      vertical-align: top;
+      width: 100%;
     }
   }
 
   p {
+    grid-area: content;
     margin: 0;
     line-height: 1.5;
   }
 
   ul {
+    grid-area: tags;
     margin: 0.5rem 0 1rem;
     display: flex;
-    flex-flow: row wrap;
+    flex-flow: row nowrap;
     gap: 0.5rem;
     font-size: 0.625rem;
 
@@ -117,5 +127,15 @@ h1 {
       border-radius: 2rem;
       flex: 0 0 auto;
     }
+  }
+}
+
+@media (min-width: 768px) {
+  .card {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "image title"
+      "image content"
+      "image tags";
   }
 }

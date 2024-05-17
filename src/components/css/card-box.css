@@ -15,21 +15,10 @@ h1 {
   padding: 30px;
 }
 
-@media (max-width: 640px) {
-  .container {
-    grid-template-columns: 1fr;
-  }
-}
-
-@media (min-width: 640px) {
+@media (min-width: 768px) {
   .container {
     grid-template-columns: 1fr 1fr;
   }
 }
 
-@media (min-width: 1025px) {
-  .container {
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  }
-}
 /* auto-fit을 이용해서 화면 비율에 맞게 컬럼을 정렬함. 반응형 스터디룸 프로젝트에도 이거 사용하는게 좋을듯 */
