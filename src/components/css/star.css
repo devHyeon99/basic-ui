@@ -1,0 +1,6 @@
+@import url(/style/sr-only.css);
+
+.rating {
+  font-size: 2rem;
+  color: green;
+}

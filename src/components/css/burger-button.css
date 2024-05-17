@@ -1,0 +1,56 @@
+/* 햄버거 버튼 */
+.burger-button {
+  background: transparent;
+  border: 0;
+  padding: 0;
+  width: 24px;
+  height: 24px;
+  overflow: hidden;
+  z-index: 10;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+
+  span {
+    width: 100%;
+    height: 20%;
+    background-color: #fff;
+    border-radius: 20px;
+    transition: all 200ms;
+    grid-area: 1 / 1 / 2 / 2;
+  }
+
+  .burger-bar-top {
+    align-self: start;
+  }
+  .burger-bar-middle {
+    align-self: center;
+  }
+  .burger-bar-bottom {
+    align-self: end;
+  }
+
+  /* is-actvie 클래스가 있을 때 */
+  &.is-active {
+    .burger-bar-top,
+    .burger-bar-bottom {
+      align-self: center;
+    }
+
+    .burger-bar-top {
+      rotate: 45deg;
+    }
+
+    .burger-bar-middle {
+      translate: -100% 0;
+    }
+
+    .burger-bar-bottom {
+      rotate: -45deg;
+    }
+  }
+
+  @media (min-width: 768px) {
+    display: none;
+  }
+}

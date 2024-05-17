@@ -1,0 +1,48 @@
+/* transition - 애니메이션 */
+/* 내비게이션 */
+.navigation {
+  background-color: transparent;
+
+  @media (min-width: 768px) {
+    background-color: sandybrown;
+  }
+}
+
+.menu {
+  position: fixed;
+  background: orange;
+  top: 0;
+  left: 0;
+  width: 70%;
+  height: 100vh;
+  translate: -100% 0;
+  /* transition-property: translate, background;
+  transition-duration: 2000ms, 2000ms;
+  transition-delay: 0ms, 4000ms;
+  transition-timing-function: ease-in-out, ease-in-out; */
+  /* transition: translate 2000ms 0ms ease-in-out, 
+              background 2000ms 2000ms ease-in-out; */
+  transition: all 0.2s;
+
+  &.is-active {
+    translate: 0 0;
+    background: purple;
+  }
+
+  @media (min-width: 768px) {
+    background: transparent;
+    position: static;
+    width: auto;
+    height: auto;
+    translate: none;
+    transition: none;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+
+    a {
+      display: block;
+      padding: 1rem;
+    }
+  }
+}
